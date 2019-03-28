@@ -31,7 +31,7 @@ int main (int argc, char *argv[])
 			nextChar = chare;
 
 		else if (strcmp(argv[1], "c") == 0) 
-			nextChar = alfabeto[(index + k) % 62];
+			nextChar = alfabeto[(62+index+k) % 62];
 		
 		else if (strcmp(argv[1], "d") == 0) {
 			nextChar = alfabeto[abs(62+index-k) % 62];
