@@ -18,7 +18,7 @@ int main (int argc, char *argv[])
 	int k = atoi(argv[2]);
 
 	f = fopen(argv[3], "r");	
-
+	
 	while ((c = fgetc(f)) != EOF) {
 
 		char chare = (char) c;
@@ -30,11 +30,12 @@ int main (int argc, char *argv[])
 		if (index == -1) 
 			nextChar = chare;
 
-		else if (strcmp(argv[1], "c")) 
+		else if (strcmp(argv[1], "c") == 0) 
 			nextChar = alfabeto[(index + k) % 62];
 		
-		else if (strcmp(argv[1], "d")) 
-			nextChar = alfabeto[abs(index-k) %62];
+		else if (strcmp(argv[1], "d") == 0) {
+			nextChar = alfabeto[abs(62+index-k) % 62];
+		}
 
 		printf("%c", nextChar);
 	}
